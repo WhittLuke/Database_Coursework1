@@ -8,7 +8,7 @@
 
 -- First let's create the department table because it shares its PK with the academic table.
 -- The structure for the department table is klart
-/*CREATE TABLE department (
+CREATE TABLE department (
     dept_id CHAR(4) NOT NULL,
     name VARCHAR(25) NOT NULL, -- I will assume we're not required to handle Unicode char's so I will use VARCHAR
     description VARCHAR(100) ,-- I changed the name of description from the original ERD because desc is a reserved SQL name
@@ -61,14 +61,14 @@ CREATE TABLE supervises (
 
     PRIMARY KEY(phdStud_id, type),
     FOREIGN KEY(academ_id) REFERENCES academic (academ_id) -- This Foreign Key syntax seems incorrect. However, it worked for the academic table
-    );*/
+    );
 
 
 
 
 -- Next, let's create the project table
 -- The structure for the project table is klart
-/*CREATE TABLE project (
+CREATE TABLE project (
     proj_id CHAR(6) NOT NULL, -- 6 chars should be enough to provide relevant detail
     title VARCHAR(100) NOT NULL, -- Would need to be able to handle a very long title
     startDate DATE NOT NULL, -- It's only DATE because we don't need to know the H:M:S for when the project started
@@ -78,13 +78,13 @@ CREATE TABLE supervises (
 
     PRIMARY KEY(proj_id),
     FOREIGN KEY(academ_id) REFERENCES academic (academ_id)
-    );*/
+    );
 
 
 
 -- Finally, we can now create the collaborateIn table
 -- The structure for this table is
-/*CREATE TABLE collaborates_in (
+CREATE TABLE collaborates_in (
     academ_id CHAR(4) NOT NULL,
     proj_id CHAR(6) NOT NULL,
     time DECIMAL(5,2) NOT NULL,
@@ -92,4 +92,4 @@ CREATE TABLE supervises (
     PRIMARY KEY(academ_id, proj_id),
     FOREIGN KEY(academ_id) REFERENCES academic (academ_id), -- I've done it this way because I was getting an error saying: Cannot add foreign key constraint
     FOREIGN KEY(proj_id) REFERENCES project (proj_id)
-    );*/
+    );
