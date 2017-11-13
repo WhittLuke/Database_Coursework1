@@ -1,6 +1,6 @@
 -- Part 1.3 view.sql
 --
--- Submitted by: Write your Name here
+-- Submitted by: Luke Whittaker
 -- 
 
 
@@ -11,7 +11,7 @@
 CREATE VIEW ongoingProjects
 AS SELECT *
 FROM project
-WHERE endDate LIKE '201712%' AND endDate LIKE '2018%'
+WHERE endDate > CURDATE()
 WITH CHECK OPTION;
 
 -- add your statement to test rejection
