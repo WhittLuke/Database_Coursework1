@@ -18,7 +18,7 @@ ALTER COLUMN type SET DEFAULT 'First Superviser';
 -- pdfs, documents, etc....
 -- We will do this by adding two columns called proposal and deliverables
 
-ATLER TABLE project
+ALTER TABLE project
 ADD COLUMN proposal LONGBLOB AFTER budget;
 
 ALTER TABLE project
